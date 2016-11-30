@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package ToxicProto;
+
+
+message Authenticate
+{
+	string Username = 1;
+	string Password = 2;
+}
+
+
+message AuthenticationResponse
+{
+	enum Code
+	{
+		WRONG_LOGIN = 0;
+		BANNED = 1;
+		SUCCESS = 2;
+	}
+
+	Code ResponseCode = 1;
+	repeated string UnlockedHacks = 2;
+	string Token = 3;
+}

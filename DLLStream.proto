@@ -1,0 +1,21 @@
+syntax = "proto3";
+package ToxicProto;
+
+
+message StreamRequest
+{
+	string Token = 1;
+	string Hack = 2;
+}
+
+message Stream
+{
+	enum StreamCode
+	{
+		STREAM_OK = 0;
+		NOT_UNLOCKED = 1;
+	}
+
+	StreamCode streamCode = 1;
+	bytes Stream = 2;
+}
