@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package ToxicProto;
+
+// This Message is for checking if the Server is online
+message HelloMessage
+{
+	int32 ClientVersion = 1;
+	//required int64 ClientSeed = 2;
+}
+
+message HelloResponseMessage
+{
+	enum Status
+	{
+		OK = 0;
+		BUSY = 1;
+	}
+
+	Status ServerStatus = 1;
+}
